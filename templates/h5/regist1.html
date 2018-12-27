@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>登陆页面</title>
+</head>
+        <meta charset="UTF-8">
+    <body>
+        <div><!--所有功能的布局-->
+            <div onclick="click_display()" style="margin: 10px;text-align: center">---查询打印机基本信息---</div>
+            <div  id="check" style=" width: auto; height: auto;border:2px solid dimgrey;"><!--查询打印机功能布局-->
+            <form method="POST">
+                <div style="margin: 20px; margin-left: 500px;">
+                    <div style="text-align: left">
+                        <input style="width: 150px; height: 40px; padding: 5px;text-align: center"  name="username" type="text" placeholder="请输打印机SN"><br>
+                    </div>
+                    <div style="margin-top: 20px">
+                    <button id="btn" type="submit" style="width: 165px; height: 40px">查询</button>
+                    </div>
+                </div>
+                    {% csrf_token %}
+            </form>
+            <div style=" width: auto;height: 120px">
+                <table>
+                    <tr>
+                        <td style="border:1px solid dimgrey">设备ID(equipment_id)</td>
+                        <td style="border:1px solid dimgrey">设备型号(equipment_type)</td>
+                        <td style="border:1px solid dimgrey">设备编码(equipment_code)</td>
+                        <td style="border:1px solid dimgrey">校验码(check_code)</td>
+                        <td style="border:1px solid dimgrey">打印机支持的纸张类型(paper_type)</td>
+                        <td style="border:1px solid dimgrey">打印机(dpi)</td>
+                        <td style="border:1px solid dimgrey">打印机软件版本(var_version)</td>
+                        <td style="border:1px solid dimgrey">打印机固件版本(firmware_version)</td>
+                        <td style="border:1px solid dimgrey">打印机目前连接的域名(domain)</td>
+                        <td style="border:1px solid dimgrey">最新域名(new_domain)</td>
+                        <td style="border:1px solid dimgrey">微信设备ID(device_id)</td>
+                        <td style="border:1px solid dimgrey">是否关联(is_bind)</td>
+                        <td style="border:1px solid dimgrey">是否授权(is_auth)</td>
+                        <td style="border:1px solid dimgrey">是否开通WiFi(is_open_wifi)</td>
+                        <td style="border:1px solid dimgrey">创建人(created_by)</td>
+                        <td style="border:1px solid dimgrey">创建时间(created_on)</td>
+                        <td style="border:1px solid dimgrey">更新人(modified_by)</td>
+                        <td style="border:1px solid dimgrey">更新时间(modified_on)</td>
+                        <td style="border:1px solid dimgrey">备注(memo)</td>
+                        <td style="border:1px solid dimgrey">纸张宽度(paper_width)</td>
+                        <td style="border:1px solid dimgrey">当前纸张类型(current_paper_type)</td>
+                        <td style="border:1px solid dimgrey">是否需要允许升级(is_upgrade)</td>
+                        <td style="border:1px solid dimgrey">是否发磐石系统(is_sendps)</td>
+                        <td style="border:1px solid dimgrey">软件类型(softtype)</td>
+                        <td style="border:1px solid dimgrey">a版本号(ver2)</td>
+                        <td style="border:1px solid dimgrey">b版本号(ver3)</td>
+                    </tr>
+                    <tr >
+                        <td style="border:1px solid dimgrey">{{ data.0}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.1}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.2}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.3}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.4}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.5}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.6}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.7}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.8}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.9}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.10}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.11}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.12}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.13}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.14}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.15}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.16}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.17}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.18}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.19}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.20}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.21}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.22}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.23}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.24}}</td>
+                        <td style="border:1px solid dimgrey">{{ data.25}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+            <div style="text-align: center;margin-top: 50px;margin-bottom: 20px">---查询打印机订单情况---</div>
+            <div style="width: auto;height: auto;border:2px solid red;padding: 10px">
+                <form method="POST">
+                    <div>
+                        <p>开始时间：
+                            <input name="strat_data" type="date" value="2018-12-12">
+                            <input name="strat_time" type="time" value="12:59">
+                              结束时间：
+                            <input name="end_data" type="date" value="2018-12-12">
+                            <input name="end_time" type="time" value="12:59">
+                        </p>
+                        <P>
+                            <input  name="printer_code" placeholder="请输入打印机SN">
+                        </P>
+                        <p>
+                            <button onclick="showData()" type="submit" style="width: 60px; height: 35px;text-align: center">查询</button>
+                        </p>
+                    </div>
+                     {% csrf_token %}
+            </form>
+
+                    {{ Order_Date.1 }}
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
+
+<script>
+
+    function showDate() {
+        var Date = {{ Order_Date }}
+        alert(1)
+    }
+{#showDate()#}
+</script>
