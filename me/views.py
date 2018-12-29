@@ -40,13 +40,3 @@ def selectOrder(request):
 
 
 
-
-
-
-
-
-
-
-
-
-
