@@ -27,8 +27,7 @@ from me import views
 urlpatterns = [
     url('admin/$', admin.site.urls),
     url(r'^regist1/$', views.login),
-    # url(r'^regist1/$', views.selectOrder),
-
+    # url(r'^regist1/$',  views.selectOrder),
 ]
 
 
