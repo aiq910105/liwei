@@ -7,7 +7,7 @@
         <div><!--所有功能的布局-->
             <div onclick="click_display()" style="margin: 10px;text-align: center">---查询打印机基本信息---</div>
             <div  id="check" style=" width: auto; height: auto;border:2px solid dimgrey;"><!--查询打印机功能布局-->
-            <form method="POST">
+            <form method="POST" name="f1">
                 <div style="margin: 20px; margin-left: 500px;">
                     <div style="text-align: left">
                         <input style="width: 150px; height: 40px; padding: 5px;text-align: center"  name="username" type="text" placeholder="请输打印机SN"><br>
@@ -81,7 +81,7 @@
         </div>
             <div style="text-align: center;margin-top: 50px;margin-bottom: 20px">---查询打印机订单情况---</div>
             <div style="width: auto;height: auto;border:2px solid red;padding: 10px">
-                <form method="POST">
+                <form method="POST" name="f2">
                     <div>
                         <p>开始时间：
                             <input name="strat_data" type="date" value="2018-12-12">
