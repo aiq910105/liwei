@@ -14,18 +14,15 @@ def OrderDate(printer_Code, StartTime, EndTime):
     # sql = ("select * from mcp_order_printer where printer_code =%s and created_on BETWEEN %s and %s")
     reCount = cur.execute("select * from mcp_order_printer where printer_code =%s and created_on BETWEEN %s and  %s", (printer_Code, StartTime, EndTime))
     sql_data =cur.fetchall()
-    if not sql_date:
-    # if sql_data != None:
-        # print(sql_data)
-        return sql_data
-        # for i in sql_data:
-        #     print(i)
-    else:
-        return None
+    return sql_data
+    # if not sql_date:
+    #     return sql_data
+    # else:
+    #     return None
     cur.close()
     conn.close()
 
 
-
+# OrderDate('17080894UI','2018-12-14','2018-12-14 12:59')
 
 

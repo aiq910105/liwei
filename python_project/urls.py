@@ -24,10 +24,12 @@ from django.conf.urls import url
 from django.contrib import admin
 from me import views
 
+
 urlpatterns = [
-    url('admin/$', admin.site.urls),
-    url(r'^regist1/$', views.login),
-    # url(r'^regist1/$',  views.selectOrder),
+    # url('admin/$', admin.site.urls),
+    url(r'^regist1/$', views.login, name='login'),
+    url(r'^index/$', views.index),
+    url(r'^ok/$',  views.selectOrder, name='selectOrder'),
 ]
 
 

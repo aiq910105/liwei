@@ -11,11 +11,11 @@ import time
 # def hello(request):
 #     return HttpResponse("Hello world ! ")
 
-def index(request):
-        return  render(request, 'h5/index.html')
+
 
 def login(request):
     if request.method == 'POST':
+        time.sleep(60)
         username = request.POST.get('username')
         data = search_printer(username)
         # 判断数组是否有元素，data（有证明sql查询到数据了）
@@ -39,7 +39,7 @@ def login(request):
         return render(request, 'h5/regist1.html', {'erro': "没请求"})
 """
 
-
+"""
 def selectOrder(request):
     if request.method == 'POST':
         StratData = request.POST.get('strat_data')
@@ -52,10 +52,10 @@ def selectOrder(request):
         Order_Date = OrderDate(PinterCode,Strat,End)
         #如果有数据
         if Order_Date:
-            return render(request, 'h5/ok.html', {'Order_Date': Order_Date})
+            return render(request, 'h5/regist1.html', {'Order_Date': Order_Date})
         else:
             return HttpResponse("查询不到数据")
     else:
-        return render(request, 'h5/ok.html', {'erro': "没请求"})
-
+        return render(request, 'h5/regist1.html', {'erro': "没请求"})
+"""
 

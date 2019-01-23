@@ -10,7 +10,7 @@ def connect_server(stop_time):
     last = now + stop_time
     n = 0
     data = "aaaa"
-    print('发送时间：%s----- ----发送的数据为%s' , data)
+    print('发送时间：%s----- ----发送的数据为%s' %(times_send, data))
     # 发送数据
     data = bytes(data, encoding="utf-8")
     ip_port = ('47.106.64.230', 9091)

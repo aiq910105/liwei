@@ -6,7 +6,7 @@
     <body>
         <div><!--所有功能的布局-->
             <div onclick="click_display()" style="margin: 10px;text-align: center">---查询打印机基本信息---</div>
-            <div  id="check" style=" width: auto; height: auto;border:2px solid dimgrey;"><!--查询打印机功能布局-->
+            <div  id="check" style=" width: auto; height : 350px;border:2px solid dimgrey;"><!--查询打印机功能布局-->
             <form method="POST" name="f1">
                 <div style="margin: 20px; margin-left: 500px;">
                     <div style="text-align: left">
@@ -77,31 +77,6 @@
                         <td style="border:1px solid dimgrey">{{ data.25}}</td>
                     </tr>
                 </table>
-            </div>
-        </div>
-            <div style="text-align: center;margin-top: 50px;margin-bottom: 20px">---查询打印机订单情况---</div>
-            <div style="width: auto;height: auto;border:2px solid red;padding: 10px">
-                <form method="POST" name="f2">
-                    <div>
-                        <p>开始时间：
-                            <input name="strat_data" type="date" value="2018-12-12">
-                            <input name="strat_time" type="time" value="12:59">
-                              结束时间：
-                            <input name="end_data" type="date" value="2018-12-12">
-                            <input name="end_time" type="time" value="12:59">
-                        </p>
-                        <P>
-                            <input  name="printer_code" placeholder="请输入打印机SN">
-                        </P>
-                        <p>
-                            <button onclick="showData()" type="submit" style="width: 60px; height: 35px;text-align: center">查询</button>
-                        </p>
-                    </div>
-                     {% csrf_token %}
-            </form>
-
-                    {{ Order_Date.1 }}
-                </div>
             </div>
         </div>
 
