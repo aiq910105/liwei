@@ -29,7 +29,8 @@ urlpatterns = [
     # url('admin/$', admin.site.urls),
     url(r'^regist1/$', views.login, name='login'),
     url(r'^index/$', views.index),
-    url(r'^ok/$',  views.selectOrder, name='selectOrder'),
+    url(r'^printer_order/$',  views.selectOrder, name='selectOrder'),
+    url(r'^Chnck_Code/$',  views.Chnck_Code, name='Chnck_Code'),
 ]
 
 

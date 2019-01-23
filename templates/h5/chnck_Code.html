@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查看校验码</title>
+</head>
+<body>
+    <div>
+        <form>
+             <div style="text-align: left">
+                        <input style="width: 150px; height: 40px; padding: 5px;text-align: center"  name="username" type="text" placeholder="请输打印机SN"><br>
+                    </div>
+                    <div style="margin-top: 20px">
+                    <button id="btn" type="submit" style="width: 165px; height: 40px">查询</button>
+             {%  csrf_token %}
+        </form>
+        {{ Chnck_Code }}
+    </div>
+</body>
+</html>
